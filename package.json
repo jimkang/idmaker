@@ -1,0 +1,30 @@
+{
+  "name": "idmaker",
+  "version": "0.1.0",
+  "description": "Makes ids for DOM elements.",
+  "main": "idmaker.js",
+  "scripts": {
+    "test": "mocha --ui tdd -R spec tests/basictests.js",
+    "dtest": "mocha debug --ui tdd -R spec tests/basictests.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jimkang/idmaker.git"
+  },
+  "keywords": [
+    "id",
+    "random",
+    "DOM"
+  ],
+  "author": "Jim Kang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jimkang/idmaker/issues"
+  },
+  "homepage": "https://github.com/jimkang/idmaker",
+  "devDependencies": {
+    "mocha": "~1.18.2"
+  },
+  "dependencies": {
+  }
+}
