@@ -1,5 +1,6 @@
 var RandomId = require('../index');
 var test = require('tape');
+var seedrandom = require('seedrandom');
 
 test('There should not be any clashes', function testClashes(t) {
   var randomId = RandomId();
@@ -21,3 +22,15 @@ test('Lengths of ids should be as specified', function lengthSuite(t) {
   }
   t.end();
 });
+
+test('Use seed when picking random chars', seedTest);
+
+function seedTest(t) {
+  var randomId = RandomId({ random: seedrandom('test') });
+  t.equal(randomId(4), 'tUyP', 'id is correct.');
+  t.equal(randomId(4), 'SOYF', 'id is correct.');
+  t.equal(randomId(4), 'lWZw', 'id is correct.');
+  t.equal(randomId(4), 'xApx', 'id is correct.');
+  t.equal(randomId(4), 'UCjg', 'id is correct.');
+  t.end();
+}
