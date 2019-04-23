@@ -21,4 +21,3 @@ test('Lengths of ids should be as specified', function lengthSuite(t) {
   }
   t.end();
 });
-

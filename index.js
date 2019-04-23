@@ -1,6 +1,5 @@
 var Probable = require('probable').createProbable;
-var idChars = 
-  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
+var idChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
 
 function RandomId() {
   var probable = Probable();
@@ -17,4 +16,3 @@ function RandomId() {
 }
 
 module.exports = RandomId;
-
