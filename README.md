@@ -1,33 +1,26 @@
-idmaker
+randomid
 =======
 
-This module generates random ids that can be used as DOM element ids.
+This module generates random ids that can be safely used as DOM element ids.
 
 Installation
 ------------
 
-    npm install idmaker
+    npm install randomId
 
 Usage
 -----
 
-In the browser:
+  var RandomId = require('randomid');
+  var randomId = RandomId();
+  var id = randomId(10);
 
-  var idmaker = createIdmaker();
-  var li = document.createElement('li');
-  li.id = idmaker.randomId(10);
-
-In Node:
-
-  var idmaker = require('idmaker');
-  var id = idmaker.randomId(10);
-
-[Here's an example.](http://jimkang.com/idmaker/example)
+[Here's an example.](http://jimkang.com/randomid/example)
 
 Tests
 -----
 
-Run tests with `npm test`. Run tests in the debugger with 'npm run-script dtest'.
+Run tests with `make test`.
 
 License
 -------
