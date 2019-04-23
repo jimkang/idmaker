@@ -1,5 +1,5 @@
 {
-  "name": "randomid",
+  "name": "@jimkang/randomid",
   "version": "1.0.0",
   "description": "Makes ids for DOM elements.",
   "main": "index.js",
