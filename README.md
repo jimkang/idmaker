@@ -6,12 +6,12 @@ This module generates random ids that can be safely used as DOM element ids.
 Installation
 ------------
 
-    npm install randomId
+    npm install @jimkang/randomid
 
 Usage
 -----
 
-  var RandomId = require('randomid');
+  var RandomId = require('@jimkang/randomid');
   var randomId = RandomId();
   var id = randomId(10);
 
@@ -19,7 +19,7 @@ Usage
 
 If you want to use your own random function (for example, one that uses a specific seed for reproducible results), you can provide it in the constructor:
 
-    var RandomId = require('randomid');
+    var RandomId = require('@jimkang/randomid');
     var seedrandom = require('seedrandom');
     var randomId = RandomId({ random: seedrandom('test') });
 
