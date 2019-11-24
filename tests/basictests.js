@@ -24,6 +24,7 @@ test('Lengths of ids should be as specified', function lengthSuite(t) {
 });
 
 test('Use seed when picking random chars', seedTest);
+test('Respect custom chars mode', customCharsTest);
 
 function seedTest(t) {
   var randomId = RandomId({ random: seedrandom('test') });
@@ -33,4 +34,22 @@ function seedTest(t) {
   t.equal(randomId(4), 'xApx', 'id is correct.');
   t.equal(randomId(4), 'UCjg', 'id is correct.');
   t.end();
+}
+
+function customCharsTest(t) {
+  const chars = '?!#%$';
+  var randomId = RandomId({ idChars: chars });
+  for (var i = 0; i < 10; ++i) {
+    const id = randomId(8);
+    t.ok(
+      id.split('').every(charIsInCustomSet),
+      'All chars in id are from custom set.'
+    );
+    //console.log(id);
+  }
+  t.end();
+
+  function charIsInCustomSet(c) {
+    return chars.includes(c);
+  }
 }

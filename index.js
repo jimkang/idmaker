@@ -1,11 +1,17 @@
 var Probable = require('probable').createProbable;
-var idChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
+const defaultIdChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split(
+  ''
+);
 
 function RandomId(opts) {
   var probable;
+  var idChars = defaultIdChars;
   if (opts) {
     let { random } = opts;
     probable = Probable({ random });
+    if (opts.idChars) {
+      idChars = opts.idChars;
+    }
   } else {
     probable = Probable();
   }
