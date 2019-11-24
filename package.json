@@ -1,6 +1,6 @@
 {
   "name": "@jimkang/randomid",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Makes ids for DOM elements.",
   "bin": {
     "randomid": "./randomid.js"
