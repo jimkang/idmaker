@@ -3,23 +3,34 @@
 /* global process */
 
 var RandomId = require('./index');
+var minimist = require('minimist');
 
-if (process.argv.length < 3) {
+var { _, upper, count } = minimist(process.argv.slice(2));
+
+const length = +_[0];
+
+if (!length) {
   console.log(
-    'Usage: [node] randomid <length of id> [--upper, provide this to generate ids with only uppercase alpha chars]'
+    `Usage: [node] randomid <length of id>
+  [--upper, provide this to generate ids with only uppercase alpha chars]
+  [--count, the number of ids to generate. Defaults to 1.]`
   );
   process.exit();
 }
 
-const length = +process.argv[2];
+if (!count) {
+  count = 1;
+}
 
 var opts = {};
 if (process.argv.length > 3) {
-  if (process.argv[3] === '--upper') {
+  if (upper) {
     opts.idChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   }
 }
 
 var randomId = RandomId(opts);
 
-console.log(randomId(length));
+for (var i = 0; i < +count; ++i) {
+  console.log(randomId(length));
+}

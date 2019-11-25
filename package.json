@@ -29,6 +29,7 @@
     "tape": "^4.10.1"
   },
   "dependencies": {
+    "minimist": "^1.2.0",
     "probable": "^2.1.3"
   }
 }
