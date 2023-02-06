@@ -12,6 +12,9 @@ function RandomId(opts) {
     if (opts.idChars) {
       idChars = opts.idChars;
     }
+    if (opts.onlyLowercase) {
+      idChars = 'abcdefghijklmnopqrstuvwxyz';
+    }
   } else {
     probable = Probable();
   }

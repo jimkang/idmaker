@@ -25,6 +25,7 @@ test('Lengths of ids should be as specified', function lengthSuite(t) {
 
 test('Use seed when picking random chars', seedTest);
 test('Respect custom chars mode', customCharsTest);
+test('Lowercase mode', lowercaseTest);
 
 function seedTest(t) {
   var randomId = RandomId({ random: seedrandom('test') });
@@ -52,4 +53,18 @@ function customCharsTest(t) {
   function charIsInCustomSet(c) {
     return chars.includes(c);
   }
+}
+
+function lowercaseTest(t) {
+  const chars = '?!#%$';
+  var randomId = RandomId({ onlyLowercase: true });
+  for (var i = 0; i < 10; ++i) {
+    const id = randomId(8);
+    t.ok(
+      id.split('').every(c => c.toLowerCase() === c),
+      'All chars in id are lowercase.'
+    );
+    //console.log(id);
+  }
+  t.end();
 }
